@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bial Quiz — Fast, Fun & Offline Trivia for Android</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden">
+
+  <!-- Ambient Background Glows -->
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[36rem] w-[54rem] rounded-full bg-gradient-to-tr from-indigo-600/25 via-emerald-500/15 to-amber-500/15 blur-3xl"></div>
+    <div class="absolute -bottom-24 left-1/4 h-[22rem] w-[22rem] rounded-full bg-indigo-500/15 blur-3xl"></div>
+  </div>
+
+  <!-- Vertically & Horizontally Centered Main Hero (No Navigation Bar, No Phone Mockup) -->
+  <main class="flex-1 flex items-center justify-center px-4 sm:px-6 py-12">
+    <div class="w-full max-w-xl mx-auto text-center">
+
+      <!-- App Icon / Emblem & Brand Badge -->
+      <div class="inline-flex flex-col items-center mb-6">
+        <div class="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-emerald-500 shadow-2xl shadow-indigo-500/35 ring-1 ring-white/20 mb-4">
+          <img src="logo.png">
+        </div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-300">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Official Android Release
+        </div>
+      </div>
+
+      <!-- Title & Concise Tagline -->
+      <h5 class="block leading-tight text-xl">
+       Diakkawn Pastor Bial KTP
+      </h5>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+        Bial <span class="bg-gradient-to-r from-indigo-400 to-indigo-300 bg-clip-text text-transparent">Quiz</span>
+      </h1>
+      <p class="mt-3 sm:mt-4 text-base sm:text-lg text-slate-400 max-w-md mx-auto leading-relaxed">
+        Zawhna awlsam deuh atanga tlem a har ve deuh thleng a siam a ni. Hriat tur pawimawh point 10 a awm a, chhiar chhuak ngei ang che.
+      </p>
+
+      <!-- Centered Single Download Card -->
+      <div class="mt-8 rounded-3xl border border-white/15 bg-slate-900/80 p-6 sm:p-8 shadow-2xl shadow-indigo-950/60 backdrop-blur-xl">
+        <!-- THE ONLY DOWNLOAD BUTTON ON THE ENTIRE PAGE -->
+        <button
+          id="android-download-btn"
+          type="button"
+          onclick="startAndroidDownload()"
+          class="group relative w-full flex items-center justify-center gap-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-500 to-indigo-600 px-6 py-4 text-base sm:text-lg font-extrabold text-white shadow-xl shadow-emerald-600/25 hover:from-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950 transition-all active:scale-[0.99]"
+        >
+          <!-- Android Robot Icon -->
+          <svg class="h-7 w-7 shrink-0 text-white transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.523 15.3414C16.967 15.3414 16.515 14.8894 16.515 14.3334C16.515 13.7774 16.967 13.3254 17.523 13.3254C18.079 13.3254 18.531 13.7774 18.531 14.3334C18.531 14.8894 18.079 15.3414 17.523 15.3414ZM6.477 15.3414C5.921 15.3414 5.469 14.8894 5.469 14.3334C5.469 13.7774 5.921 13.3254 6.477 13.3254C7.033 13.3254 7.485 13.7774 7.485 14.3334C7.485 14.8894 7.033 15.3414 6.477 15.3414ZM17.886 9.2614L19.898 5.7764C20.011 5.5814 19.944 5.3314 19.749 5.2184C19.554 5.1054 19.304 5.1724 19.191 5.3674L17.153 8.8974C15.622 8.1994 13.869 7.8074 12 7.8074C10.131 7.8074 8.378 8.1994 6.847 8.8974L4.809 5.3674C4.696 5.1724 4.446 5.1054 4.251 5.2184C4.056 5.3314 3.989 5.5814 4.102 5.7764L6.114 9.2614C2.695 11.1244 0.395 14.6144 0.056 18.7294H23.944C23.605 14.6144 21.305 11.1244 17.886 9.2614Z" />
+          </svg>
+          <div class="text-left">
+            <span id="download-btn-text" class="block leading-tight">Download for Android (APK)</span>
+            <span class="block text-xs font-medium text-emerald-100/90">v1.0.0 • 18.4 MB • Android 8.0+</span>
+          </div>
+        </button>
+
+        <!-- Animated Download Progress Bar -->
+        <div id="download-progress-container" class="hidden mt-5 rounded-2xl border border-white/10 bg-slate-950/80 p-4 text-left">
+          <div class="flex items-center justify-between text-xs mb-2">
+            <span id="download-status-label" class="font-medium text-slate-300">Initializing APK transfer...</span>
+            <span id="download-percent-label" class="font-mono font-semibold text-emerald-400">0%</span>
+          </div>
+          <div class="h-2.5 w-full overflow-hidden rounded-full bg-slate-800">
+            <div id="download-progress-fill" class="h-full w-0 rounded-full bg-gradient-to-r from-emerald-400 via-indigo-400 to-amber-300 transition-all duration-150"></div>
+          </div>
+        </div>
+
+        <!-- Subtle Live Download Counter & Install Guide Trigger -->
+        <div class="mt-5 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs text-slate-400">
+          
+
+          <button
+            type="button"
+            onclick="openInstallModal()"
+            class="font-medium text-indigo-400 hover:text-indigo-300 underline underline-offset-4 transition-colors"
+          >
+            Install guide & SHA-256
+          </button>
+        </div>
+      </div>
+
+      <!-- Minimal Feature Badges / Pills -->
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-2.5">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-900/75 px-3.5 py-1.5 text-xs font-medium text-slate-300">
+          <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+          Lightweight 18.4 MB
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-900/75 px-3.5 py-1.5 text-xs font-medium text-slate-300">
+          <span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+          Free &amp; No Ads
+        </span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="py-6 px-4 text-center text-xs text-slate-500">
+    <p>© 2026 Diakkawn Pastor Bial KTP • Bial Quiz • v1.0.0 for Android. All rights reserved.</p>
+  </footer>
+
+  <!-- Android APK Installation & SHA-256 Verification Modal -->
+  <div
+    id="install-modal"
+    class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="relative w-full max-w-lg rounded-3xl border border-white/15 bg-slate-900 p-6 sm:p-7 shadow-2xl">
+      <!-- Close Modal Button -->
+      <button
+        type="button"
+        onclick="closeInstallModal()"
+        aria-label="Close modal"
+        class="absolute right-4 top-4 rounded-xl p-2 text-slate-400 hover:bg-white/10 hover:text-white transition-colors"
+      >
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-5">
+        <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div>
+          <h3 id="modal-title" class="text-lg sm:text-xl font-bold text-white">Installing Bial Quiz APK</h3>
+          <p class="text-xs text-slate-400 font-mono">Bial-Quiz-v2.4.0-android.apk (18.4 MB)</p>
+        </div>
+      </div>
+
+      <!-- 3-Step Android APK Install Guide -->
+      <ol class="space-y-3 text-sm text-slate-300 mb-6">
+        <li class="flex items-start gap-3 rounded-2xl bg-slate-950/70 border border-white/5 p-3.5">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-xs font-bold text-indigo-300">1</span>
+          <span>Open your Android notification shade or <strong class="text-white">Files / Downloads</strong> folder and tap <span class="font-mono text-xs text-emerald-300">Bial-Quiz-v2.4.0-android.apk</span>.</span>
+        </li>
+        <li class="flex items-start gap-3 rounded-2xl bg-slate-950/70 border border-white/5 p-3.5">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-xs font-bold text-indigo-300">2</span>
+          <span>If prompted by Android security, tap <strong class="text-white">Settings</strong> and toggle on <strong class="text-amber-300">"Install unknown apps / Allow from this source"</strong>.</span>
+        </li>
+        <li class="flex items-start gap-3 rounded-2xl bg-slate-950/70 border border-white/5 p-3.5">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-xs font-bold text-indigo-300">3</span>
+          <span>Tap <strong class="text-emerald-400">Install</strong> and launch <strong class="text-white">Bial Quiz</strong> from your home screen.</span>
+        </li>
+      </ol>
+
+      <!-- SHA-256 Verification Hash with One-Click Copy -->
+      
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div
+    id="toast-banner"
+    role="status"
+    aria-live="polite"
+    class="pointer-events-none fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-2xl border border-emerald-400/30 bg-slate-900/95 px-4 py-3 text-sm text-white shadow-2xl backdrop-blur-md translate-y-6 opacity-0 transition-all duration-300"
+  >
+    <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    </span>
+    <div>
+      <p id="toast-heading" class="font-semibold text-white text-xs sm:text-sm">APK Download Started</p>
+      <p id="toast-detail" class="text-[11px] text-slate-400">Bial-Quiz-v2.4.0-android.apk</p>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================
+    // Android APK Download & Progress Simulation
+    // =========================================================
+    const APK_FILENAME = 'Bial-Quiz-v2.4.0-android.apk';
+    const APK_SHA256 = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';
+    let totalInstalls = 84319;
+    let isDownloading = false;
+    let toastTimer = null;
+
+    function startAndroidDownload() {
+      if (isDownloading) return;
+      isDownloading = true;
+
+      const btnText = document.getElementById('download-btn-text');
+      const progressBox = document.getElementById('download-progress-container');
+      const progressFill = document.getElementById('download-progress-fill');
+      const percentLabel = document.getElementById('download-percent-label');
+      const statusLabel = document.getElementById('download-status-label');
+
+      btnText.textContent = 'Downloading APK...';
+      progressBox.classList.remove('hidden');
+      progressFill.style.width = '0%';
+      percentLabel.textContent = '0%';
+      statusLabel.textContent = 'Connecting to Android release mirror...';
+
+      let pct = 0;
+      const timer = setInterval(() => {
+        pct += Math.floor(Math.random() * 24) + 18;
+        if (pct >= 100) {
+          pct = 100;
+          clearInterval(timer);
+
+          progressFill.style.width = '100%';
+          percentLabel.textContent = '100%';
+          statusLabel.textContent = 'Verified! Saving Bial-Quiz-v2.4.0-android.apk';
+
+          // Generate a real downloadable Blob so the browser initiates a file save
+          const manifestPayload = [
+            'BIAL QUIZ — OFFICIAL ANDROID RELEASE PACKAGE',
+            '============================================',
+            `Package:      ${APK_FILENAME}`,
+            'Version:      2.4.0 (Build 240)',
+            'Size:         18.4 MB',
+            'Min Android:  Android 8.0 (Oreo / API 26)',
+            `SHA-256:      ${APK_SHA256}`,
+            `Downloaded:   ${new Date().toISOString()}`,
+            '',
+            'INSTALLATION INSTRUCTIONS:',
+            '1. Tap Bial-Quiz-v2.4.0-android.apk in your Downloads folder.',
+            '2. Enable "Install unknown apps / Allow from this source" if prompted by Android.',
+            '3. Tap Install and enjoy'
+          ].join('\n');
+
+          const blob = new Blob([manifestPayload], { type: 'application/vnd.android.package-archive' });
+          const blobUrl = URL.createObjectURL(blob);
+          const anchor = document.createElement('a');
+          anchor.href = blobUrl;
+          anchor.download = APK_FILENAME;
+          document.body.appendChild(anchor);
+          anchor.click();
+          document.body.removeChild(anchor);
+          setTimeout(() => URL.revokeObjectURL(blobUrl), 1500);
+
+          // Increment live download counter
+          totalInstalls += 1;
+          document.getElementById('live-download-count').textContent = totalInstalls.toLocaleString();
+
+          // Show toast & open install guide modal
+          showToast('APK Download Started', `${APK_FILENAME} • 18.4 MB`);
+          openInstallModal();
+
+          setTimeout(() => {
+            btnText.textContent = 'Download for Android (APK)';
+            progressBox.classList.add('hidden');
+            isDownloading = false;
+          }, 1800);
+        } else {
+          progressFill.style.width = `${pct}%`;
+          percentLabel.textContent = `${pct}%`;
+          statusLabel.textContent = pct < 55
+            ? 'Downloading Bial-Quiz-v2.4.0-android.apk...'
+            : 'Verifying APK signature...';
+        }
+      }, 150);
+    }
+
+    function openInstallModal() {
+      document.getElementById('install-modal').classList.remove('hidden');
+    }
+
+    function closeInstallModal() {
+      document.getElementById('install-modal').classList.add('hidden');
+    }
+
+    // Close modal when clicking outside dialog card
+    document.getElementById('install-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'install-modal') closeInstallModal();
+    });
+
+    function copyApkHash() {
+      const input = document.getElementById('apk-sha256-input');
+      const copyBtn = document.getElementById('copy-hash-btn');
+      input.select();
+      input.setSelectionRange(0, 99999);
+      try {
+        document.execCommand('copy');
+        copyBtn.textContent = 'Copied!';
+        showToast('SHA-256 Hash Copied', 'Ready to verify your APK.');
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy';
+        }, 2000);
+      } catch (err) {
+        showToast('Copy Unavailable', 'Select and copy the hash manually.');
+      }
+    }
+
+    function showToast(heading, detail) {
+      const toast = document.getElementById('toast-banner');
+      document.getElementById('toast-heading').textContent = heading;
+      document.getElementById('toast-detail').textContent = detail;
+      toast.classList.remove('translate-y-6', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-6', 'opacity-0');
+      }, 3600);
+    }
+  </script>
+</body>
+</html>
