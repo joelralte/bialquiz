@@ -96,7 +96,7 @@
             onclick="openInstallModal()"
             class="font-medium text-indigo-400 hover:text-indigo-300 underline underline-offset-4 transition-colors"
           >
-            Install guide & SHA-256
+            Install guide 
           </button>
         </div>
       </div>
@@ -248,15 +248,18 @@
             '3. Tap Install and enjoy'
           ].join('\n');
 
-          const blob = new Blob([manifestPayload], { type: 'application/vnd.android.package-archive' });
-          const blobUrl = URL.createObjectURL(blob);
-          const anchor = document.createElement('a');
-          anchor.href = blobUrl;
-          anchor.download = APK_FILENAME;
-          document.body.appendChild(anchor);
-          anchor.click();
-          document.body.removeChild(anchor);
-          setTimeout(() => URL.revokeObjectURL(blobUrl), 1500);
+          const APK_URL = 'https://joelralte.github.io/bialquiz/bial-quiz-v1.0.1.apk';
+const APK_FILENAME = 'Bial-Quiz-v1.0.1.apk';
+
+function triggerRealApkDownload() {
+  const link = document.createElement('a');
+  link.href = APK_URL;
+  link.download = APK_FILENAME;
+  link.rel = 'noopener';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
           // Increment live download counter
           totalInstalls += 1;
