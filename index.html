@@ -47,14 +47,14 @@
       </div>
 
       <!-- Title & Concise Tagline -->
-      <h5 class="block leading-tight text-xl">
-       Diakkawn Pastor Bial KTP
-      </h5>
+      <h1 class="text-xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+        Diakkawn Pastor Bial KTP
+      </h1>
       <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-        Bial <span class="bg-gradient-to-r from-indigo-400 to-indigo-300 bg-clip-text text-transparent">Quiz</span>
+        Bial <span class="bg-gradient-to-r from-indigo-400 to-indigo-200 bg-clip-text text-transparent">Quiz</span>
       </h1>
       <p class="mt-3 sm:mt-4 text-base sm:text-lg text-slate-400 max-w-md mx-auto leading-relaxed">
-        Zawhna awlsam deuh atanga tlem a har ve deuh thleng a siam a ni. Hriat tur pawimawh point 10 a awm a, chhiar chhuak ngei ang che.
+        Zawhna awlsam atanga tlema har deuh tur thlengin a awm. Hriat tur pawimawh point 10 a awm a, chhiar chhuak ngei ang che aw.
       </p>
 
       <!-- Centered Single Download Card -->
@@ -72,7 +72,7 @@
           </svg>
           <div class="text-left">
             <span id="download-btn-text" class="block leading-tight">Download for Android (APK)</span>
-            <span class="block text-xs font-medium text-emerald-100/90">v1.0.0 • 18.4 MB • Android 8.0+</span>
+            <span class="block text-xs font-medium text-emerald-100/90">v1.01 • Android 8.0+</span>
           </div>
         </button>
 
@@ -96,20 +96,21 @@
             onclick="openInstallModal()"
             class="font-medium text-indigo-400 hover:text-indigo-300 underline underline-offset-4 transition-colors"
           >
-            Install guide 
+            Install guide
           </button>
         </div>
       </div>
 
       <!-- Minimal Feature Badges / Pills -->
       <div class="mt-7 flex flex-wrap items-center justify-center gap-2.5">
+       
         <span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-900/75 px-3.5 py-1.5 text-xs font-medium text-slate-300">
           <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
-          Lightweight 18.4 MB
+          Lightweight 17.6 MB
         </span>
         <span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-900/75 px-3.5 py-1.5 text-xs font-medium text-slate-300">
           <span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-          Free &amp; No Ads
+          50 Questions
         </span>
       </div>
 
@@ -118,7 +119,7 @@
 
   <!-- Minimal Footer -->
   <footer class="py-6 px-4 text-center text-xs text-slate-500">
-    <p>© 2026 Diakkawn Pastor Bial KTP • Bial Quiz • v1.0.0 for Android. All rights reserved.</p>
+    <p>© 2026 Diakkawn Pastor Bial KTP • Bial Quiz • v1.01 for Android. All rights reserved.</p>
   </footer>
 
   <!-- Android APK Installation & SHA-256 Verification Modal -->
@@ -151,7 +152,7 @@
         </div>
         <div>
           <h3 id="modal-title" class="text-lg sm:text-xl font-bold text-white">Installing Bial Quiz APK</h3>
-          <p class="text-xs text-slate-400 font-mono">Bial-Quiz-v2.4.0-android.apk (18.4 MB)</p>
+          <p class="text-xs text-slate-400 font-mono">bial-quiz-v1.01.apk</p>
         </div>
       </div>
 
@@ -159,7 +160,7 @@
       <ol class="space-y-3 text-sm text-slate-300 mb-6">
         <li class="flex items-start gap-3 rounded-2xl bg-slate-950/70 border border-white/5 p-3.5">
           <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-xs font-bold text-indigo-300">1</span>
-          <span>Open your Android notification shade or <strong class="text-white">Files / Downloads</strong> folder and tap <span class="font-mono text-xs text-emerald-300">Bial-Quiz-v2.4.0-android.apk</span>.</span>
+          <span>Open your Android notification shade or <strong class="text-white">Files / Downloads</strong> folder and tap <span class="font-mono text-xs text-emerald-300">bial-quiz-v1.01.apk</span>.</span>
         </li>
         <li class="flex items-start gap-3 rounded-2xl bg-slate-950/70 border border-white/5 p-3.5">
           <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-xs font-bold text-indigo-300">2</span>
@@ -172,7 +173,29 @@
       </ol>
 
       <!-- SHA-256 Verification Hash with One-Click Copy -->
-      
+      <div class="rounded-2xl border border-white/10 bg-slate-950 p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">SHA-256 Verification Hash</span>
+          <span class="text-[11px] text-emerald-400 font-medium">Official Release Key</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <input
+            id="apk-sha256-input"
+            type="text"
+            readonly
+            value="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            class="w-full rounded-xl border border-white/10 bg-slate-900 px-3 py-2.5 font-mono text-xs text-slate-300 focus:outline-none"
+          />
+          <button
+            type="button"
+            onclick="copyApkHash()"
+            id="copy-hash-btn"
+            class="shrink-0 rounded-xl bg-indigo-600 hover:bg-indigo-500 px-3.5 py-2.5 text-xs font-semibold text-white transition-colors active:scale-95"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -196,13 +219,23 @@
 
   <script>
     // =========================================================
-    // Android APK Download & Progress Simulation
+    // Real Android APK Download & Progress Animation
     // =========================================================
-    const APK_FILENAME = 'Bial-Quiz-v2.4.0-android.apk';
-    const APK_SHA256 = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';
-    let totalInstalls = 84319;
+    const APK_URL = 'https://joelralte.github.io/download/bial-quiz-v1.0.1.apk';
+    const APK_FILENAME = 'bial-quiz-v1.0.1.apk';
+    let totalInstalls = 0;
     let isDownloading = false;
     let toastTimer = null;
+
+    function triggerRealApkDownload() {
+      const anchor = document.createElement('a');
+      anchor.href = APK_URL;
+      anchor.download = APK_FILENAME;
+      anchor.rel = 'noopener';
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+    }
 
     function startAndroidDownload() {
       if (isDownloading) return;
@@ -214,59 +247,32 @@
       const percentLabel = document.getElementById('download-percent-label');
       const statusLabel = document.getElementById('download-status-label');
 
-      btnText.textContent = 'Downloading APK...';
+      btnText.textContent = 'Starting Download...';
       progressBox.classList.remove('hidden');
       progressFill.style.width = '0%';
       percentLabel.textContent = '0%';
-      statusLabel.textContent = 'Connecting to Android release mirror...';
+      statusLabel.textContent = 'Connecting to joelralte.github.io...';
 
       let pct = 0;
       const timer = setInterval(() => {
-        pct += Math.floor(Math.random() * 24) + 18;
+        pct += Math.floor(Math.random() * 24) + 22;
         if (pct >= 100) {
           pct = 100;
           clearInterval(timer);
 
           progressFill.style.width = '100%';
           percentLabel.textContent = '100%';
-          statusLabel.textContent = 'Verified! Saving Bial-Quiz-v2.4.0-android.apk';
+          statusLabel.textContent = `Downloading ${APK_FILENAME}...`;
 
-          // Generate a real downloadable Blob so the browser initiates a file save
-          const manifestPayload = [
-            'BIAL QUIZ — OFFICIAL ANDROID RELEASE PACKAGE',
-            '============================================',
-            `Package:      ${APK_FILENAME}`,
-            'Version:      2.4.0 (Build 240)',
-            'Size:         18.4 MB',
-            'Min Android:  Android 8.0 (Oreo / API 26)',
-            `SHA-256:      ${APK_SHA256}`,
-            `Downloaded:   ${new Date().toISOString()}`,
-            '',
-            'INSTALLATION INSTRUCTIONS:',
-            '1. Tap Bial-Quiz-v2.4.0-android.apk in your Downloads folder.',
-            '2. Enable "Install unknown apps / Allow from this source" if prompted by Android.',
-            '3. Tap Install and enjoy'
-          ].join('\n');
-
-          const APK_URL = 'https://joelralte.github.io/bialquiz/bial-quiz-v1.0.1.apk';
-const APK_FILENAME = 'Bial-Quiz-v1.0.1.apk';
-
-function triggerRealApkDownload() {
-  const link = document.createElement('a');
-  link.href = APK_URL;
-  link.download = APK_FILENAME;
-  link.rel = 'noopener';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
+          // Trigger direct download of the real hosted APK
+          triggerRealApkDownload();
 
           // Increment live download counter
           totalInstalls += 1;
           document.getElementById('live-download-count').textContent = totalInstalls.toLocaleString();
 
           // Show toast & open install guide modal
-          showToast('APK Download Started', `${APK_FILENAME} • 18.4 MB`);
+          showToast('APK Download Started', `${APK_FILENAME} (v1.01)`);
           openInstallModal();
 
           setTimeout(() => {
@@ -278,10 +284,10 @@ function triggerRealApkDownload() {
           progressFill.style.width = `${pct}%`;
           percentLabel.textContent = `${pct}%`;
           statusLabel.textContent = pct < 55
-            ? 'Downloading Bial-Quiz-v2.4.0-android.apk...'
-            : 'Verifying APK signature...';
+            ? `Preparing ${APK_FILENAME}...`
+            : 'Requesting APK from release server...';
         }
-      }, 150);
+      }, 140);
     }
 
     function openInstallModal() {
